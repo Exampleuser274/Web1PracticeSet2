@@ -33,6 +33,7 @@ outputArea.innerHTML = createSlug(slugifyHard)
 // TODO: subtract helper function
 // TODO: multiply helper function
 // TODO: divide helper function (remember: check for zero!)
+const calcAnswer = document.getElementById("calculator-result")
 function addNumbers(num1,num2){
   let total = num1+num2
   return total
@@ -46,25 +47,28 @@ function multiplyNumbers(num1,num2){
   return total
 }
 function divideNumbers(num1,num2){
+  let total = 0
   if (num2 == 0){
     total = "Error"
   }
   else{
-    let total = num1/num2
+    total = num1/num2
   }
   return total
 }
 // TODO: calculate function - accepts num1, num2, operator; calls appropriate helper
 function calculate(num1, num2, operator) {
+  let answer = 0
   if ( operator == '+'){
-
+    answer = addNumbers(num1,num2)
   }else if(operator=='-'){
-
+    answer = subtractNumbers(num1,num2)
   }else if(operator=='*'){
-
+    answer = multiplyNumbers(num1,num2)
   }else if(operator=='/'){
-
+    answer = divideNumbers(num1,num2)
   }
+  return answer
   // Use conditionals to determine which operation to perform
 }
 
@@ -83,9 +87,10 @@ function handleCalculatorSubmit(event) {
   }else if (bValue == ''){
     window.alert("please enter a value in operand B")
   }else{
-    aNum = number(aValue)
-    bNum = number(bValue)
-    operatorVal = operatorElement.value
+    let aNum = Number(aValue)
+    let bNum = Number(bValue)
+    let answer = calculate(aNum,bNum,operatorElement.value)
+    calcAnswer.innerHTML = answer
   }
   // TODO: Coerce string values to numbers
   // TODO: Error handle if no operator is selected (guard clause)
