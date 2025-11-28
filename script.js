@@ -12,7 +12,18 @@
 // Test strings
 const slugifySimple = "Hello World ";
 const slugifyHard = "Hello World! This is my blog post.";
+const inputArea = document.getElementById("non-slugified-string")
+const outputArea = document.getElementById("slugified-string")
+function createSlug(preSlug){
+  let postSlug = preSlug.replaceAll(' ','-')
+  postSlug = postSlug.replaceAll('!','')
+  postSlug = postSlug.replaceAll(".",'')
+  postSlug = postSlug.toLowerCase()
 
+  return postSlug
+}
+inputArea.innerHTML = slugifyHard
+outputArea.innerHTML = createSlug(slugifyHard)
 // TODO: create DOM selector variables for output elements
 // TODO: declare the createSlug function (takes text parameter, returns string)
 // TODO: invoke createSlug with test string and update DOM
@@ -22,9 +33,38 @@ const slugifyHard = "Hello World! This is my blog post.";
 // TODO: subtract helper function
 // TODO: multiply helper function
 // TODO: divide helper function (remember: check for zero!)
-
+function addNumbers(num1,num2){
+  let total = num1+num2
+  return total
+}
+function subtractNumbers(num1,num2){
+  let total = num1-num2
+  return total
+}
+function multiplyNumbers(num1,num2){
+  let total = num1*num2
+  return total
+}
+function divideNumbers(num1,num2){
+  if (num2 == 0){
+    total = "Error"
+  }
+  else{
+    let total = num1/num2
+  }
+  return total
+}
 // TODO: calculate function - accepts num1, num2, operator; calls appropriate helper
 function calculate(num1, num2, operator) {
+  if ( operator == '+'){
+
+  }else if(operator=='-'){
+
+  }else if(operator=='*'){
+
+  }else if(operator=='/'){
+
+  }
   // Use conditionals to determine which operation to perform
 }
 
@@ -36,13 +76,24 @@ function handleCalculatorSubmit(event) {
   const operatorElement = document.querySelector(
     'input[name="operator"]:checked'
   );
-
+  if (aValue == ''){
+    window.alert("Please enter a value in operand A")
+  }else if (operatorElement.value == ''){
+    window.alert("please select an operator")
+  }else if (bValue == ''){
+    window.alert("please enter a value in operand B")
+  }else{
+    aNum = number(aValue)
+    bNum = number(bValue)
+    operatorVal = operatorElement.value
+  }
   // TODO: Coerce string values to numbers
   // TODO: Error handle if no operator is selected (guard clause)
   // TODO: Call calculate function with operands and operator
   // TODO: Update DOM with result
 }
-
+const submitButton = document.getElementById("calculate-result")
+submitButton.addEventListener("click",handleCalculatorSubmit)
 // TODO: Add event listener to form element
 
 /* --- Carousel Interface --- */
