@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Practice Set 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Javascript Practice Set 2</h1>
+      <p>These challenges focus on functions and conditionals. They make use of real world problems for you to develop
+        your skills.</p>
+    </header>
+    <section class="section-card">
+      <header>
+        <h2>URL Slug Generator</h2>
+        <p>This example doesn't need to take user input, though you can make it more advanced by adding an input field
+          and try to slugify user input text.</p>
+        <p>See the readme for instructions and syntax tips.</p>
+      </header>
+      <p>Input: <span id="non-slugified-string"></span></p>
+      <p>Output: <span id="slugified-string"></span></p>
+    </section>
+    <section class="section-card">
+      <header>
+        <h2>Simple Calculator</h2>
+        <p>This example takes user input but creates a tightly controlled set of operators for you to work with.</p>
+      </header>
+      <form>
+        <div class="form-group">
+          <label for="a">Operand a:</label>
+          <input type="text" id="a" name="a" id="a">
+        </div>
+        <div class="form-group">
+          <label for="b">Operand b:</label>
+          <input type="text" id="b" name="b" id="b">
+        </div>
+        <fieldset>
+          <legend>Select and Operator</legend>
+          <div>
+            <label for="add">add</label>
+            <input type="radio" name="operator" id="add" value="+">
+          </div>
+          <div>
+            <label for="subtract">subtract</label>
+            <input type="radio" name="operator" id="subtract" value="-">
+          </div>
+          <div>
+            <label for="multiply">multiply</label>
+            <input type="radio" name="operator" id="multiply" value="*">
+          </div>
+          <div>
+            <label for="divide">divide</label>
+            <input type="radio" name="operator" id="divide" value="/">
+          </div>
+        </fieldset>
+        <button type="submit" id="calculate-result" class="btn btn-primary">Calculate</button>
+      </form>
+      <div>
+        <h3>Result: <span id="calculator-result" class="result"></span></h3>
+      </div>
+    </section>
+    <section class="section-card">
+      <header>
+        <h2>Carousel Interface</h2>
+        <p>Toggle the h3 below to swap between the messages in the provided array. Feel free to advance this by changing
+          to use a set of images and modify the src path from javascript.</p>
+      </header>
+      <div>
+        <h3 id="carousel-current"></h3>
+        <div class="carousel-controls">
+          <button id="carousel-back" class="btn btn-secondary">back</button>
+          <button id="carousel-forward" class="btn btn-secondary">forward</button>
+        </div>
+      </div>
+    </section>
+    <section class="section-card">
+      <header>
+        <h2>Dynamic Calculator (bonus challenge)</h2>
+        <p>This exercise presents a lot of potential challenges and edge cases to handle. It can serve as a case study
+          in managing user error.</p>
+      </header>
+      <div>
+        <label for="dynamic-calculator-input">Calculator Input:</label>
+        <input type="text" id="dynamic-calculator-input" name="dynamic-calculator-input">
+        <button id="dynamic-calculator-button" class="btn btn-primary">Calculate</button>
+      </div>
+      <h3>Result: <span id="dyamic-calculator-output" class="result"></span></h3>
+    </section>
+  </main>
+</body>
+
+</html>
