@@ -111,7 +111,23 @@ const carouselMessages = [
 ];
 
 let currentIndex = 0;
-
+function updateCarousel(){
+  messageDisplay.innerHTML = carouselMessages[currentIndex]
+}
+function moveForward(){
+ currentIndex = (currentIndex+1)%carouselMessages.length
+ updateCarousel()
+}
+function moveBackward(){
+ currentIndex = (currentIndex-1+carouselMessages.length)%carouselMessages.length
+ updateCarousel()
+}
+const forwardButton = document.getElementById("carousel-forward")
+const backButton = document.getElementById("carousel-back")
+const messageDisplay = document.getElementById("carousel-current")
+updateCarousel()
+backButton.addEventListener("click",moveBackward)
+forwardButton.addEventListener("click",moveForward)
 // TODO: updateCarousel function - displays current message in DOM
 // TODO: moveForward function - increment index with wrap-around (hint: modulo)
 // TODO: moveBackward function - decrement index with wrap-around
